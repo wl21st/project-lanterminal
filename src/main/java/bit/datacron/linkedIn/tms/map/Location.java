@@ -5,7 +5,7 @@ import bit.datacron.linkedIn.tms.physics.AmbientTemperature;
 public class Location {
 	
 	private String description;
-	private AmbientTemperature ambientTemp;
+	private final AmbientTemperature ambientTemp;
 	
 	public Location(String description) {
 		this.description = description;

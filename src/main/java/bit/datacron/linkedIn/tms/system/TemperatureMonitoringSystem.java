@@ -1,12 +1,15 @@
 package bit.datacron.linkedIn.tms.system;
 
+import java.util.concurrent.TimeUnit;
+
 public class TemperatureMonitoringSystem implements Runnable {
 	
+	private final int refreshRate;  // milliseconds
+	private final TemperatureSensor[] tSensors;
+	private final double[] temperatures;
+
 	private boolean monitoringEnabled;
-	private int refreshRate;  // milliseconds
-	private TemperatureSensor[] tSensors;
-	private double[] temperatures;
-	
+
 	public TemperatureMonitoringSystem(TemperatureSensor[] tSensors, int refreshRate) {
 		this.tSensors = tSensors;
 		this.monitoringEnabled = true;
@@ -18,7 +21,7 @@ public class TemperatureMonitoringSystem implements Runnable {
 		while (monitoringEnabled) {
 				
 			try {
-				Thread.sleep(refreshRate);
+				TimeUnit.MILLISECONDS.sleep(refreshRate);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

@@ -4,7 +4,7 @@ import bit.datacron.linkedIn.tms.physics.AmbientTemperature;
 
 public class AmbientTemperatureSensor implements TemperatureSensor {
 	
-	private AmbientTemperature ambientTemperature;
+	private final AmbientTemperature ambientTemperature;
 	
 	public AmbientTemperatureSensor(AmbientTemperature ambientTemperature) {
 		this.ambientTemperature = ambientTemperature;

@@ -38,7 +38,7 @@ public class App {
 		AmbiTemperRegulator tCS = new AmbiTemperRegulator(25.0, 0.5);
 		Thread tCSThread = new Thread(tCS);
 		for (int i = 0; i < locationList.size(); i++) {
-			((AmbiTemperRegulator) tCS).addAmbientTemperature(locationList.get(i).getAmbientTemp());
+			tCS.addAmbientTemperature(locationList.get(i).getAmbientTemp());
 		}
 		tCSThread.start();
 		
